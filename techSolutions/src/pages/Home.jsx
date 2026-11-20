@@ -4,25 +4,37 @@ import TextosImagens from "../components/TextosImagens";
 export default function Home() {
   return (
     <main id="home" className="home">
-      <TextosImagens
-        variante="hero"
-        tag="TECNOLOGIA E INOVAÇÃO"
-        titulo="Transformando ideias em soluções digitais"
-        texto="Desenvolvemos soluções tecnológicas para conectar pessoas, negócios e inovação."
-        imagem="/hero.jpg"
-        altImagem="Desenvolvedor a trabalhar com código em múltiplos monitores"
-      />
+      <section className="hero-full">
+        
+        <div className="hero-full__overlay">
+          <div className="hero-full__conteudo">
+            <span className="tag">TECNOLOGIA E INOVAÇÃO</span>
+            <h1>Transformando ideias em soluções digitais</h1>
+            <p>
+              Desenvolvemos soluções tecnológicas para conectar pessoas, negócios e inovação.
+            </p>
 
-      <Cards />
-
-      <div id="sobre">
-        <TextosImagens
-          variante="sobre"
-          titulo="Conheça nossa empresa"
-          texto="A TechSolutions acredita que a tecnologia pode transformar o futuro. Nossa equipe desenvolve soluções digitais para facilitar processos e melhorar resultados."
-          imagem="/equipa.jpg"
-          altImagem="Equipa da TechSolutions a colaborar num escritório moderno"
+            <img
+          src={`${import.meta.env.BASE_URL}hero.jpg`}
+          alt="Desenvolvedor trabalhando com código em múltiplos monitores"
+          className="hero-full__img"
         />
+          </div>
+        </div>
+      </section>
+
+      <div className="container-principal">
+        <Cards />
+
+        <div id="sobre">
+          <TextosImagens
+            titulo="Conheça nossa empresa"
+            texto="A TechSolutions acredita que a tecnologia pode transformar o futuro. Nossa equipe desenvolve soluções digitais para facilitar processos e melhorar resultados."
+            imagem={`${import.meta.env.BASE_URL}equipa.jpg`}
+            altImagem="Equipe da TechSolutions colaborando em um escritório moderno"
+            inverter={true}
+          />
+        </div>
       </div>
     </main>
   );

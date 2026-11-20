@@ -4,10 +4,13 @@ export default function TextosImagens({
   texto,
   imagem,
   altImagem,
+  inverter = false,
   variante = "padrao"
 }) {
   return (
-    <section className={`textos-imagens textos-imagens--${variante}`}>
+    <section
+      className={`textos-imagens textos-imagens--${variante} ${inverter ? "invertido" : ""}`}
+    >
       <div className="texto-bloco">
         {tag && <span className="tag">{tag}</span>}
         <h2>{titulo}</h2>
@@ -15,7 +18,7 @@ export default function TextosImagens({
       </div>
 
       <div className="imagem-bloco">
-        <img src={imagem} alt={altImagem} />
+        {imagem && <img src={imagem} alt={altImagem} />}
       </div>
     </section>
   );

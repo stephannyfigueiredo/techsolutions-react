@@ -11,17 +11,17 @@ function CardItem({ imagem, titulo, descricao }) {
 export default function Cards() {
   const servicos = [
     {
-      imagem: "/desenvolvimento.jpg",
+      imagem: `${import.meta.env.BASE_URL}desenvolvimento.jpg`,
       titulo: "Desenvolvimento",
       descricao: "Sistemas e aplicações web."
     },
     {
-      imagem: "/design.png",
+      imagem: `${import.meta.env.BASE_URL}design.png`,
       titulo: "Design",
       descricao: "Interfaces modernas."
     },
     {
-      imagem: "/tecnologia.png",
+      imagem: `${import.meta.env.BASE_URL}tecnologia.png`,
       titulo: "Tecnologia",
       descricao: "Soluções inteligentes."
     }
@@ -31,12 +31,12 @@ export default function Cards() {
     <section id="servicos" className="servicos-section">
       <h2>Nossos serviços</h2>
       <div className="cards-grid">
-        {servicos.map((servico) => (
+        {servicos.map((item) => (
           <CardItem
-            key={servico.titulo}
-            imagem={servico.imagem}
-            titulo={servico.titulo}
-            descricao={servico.descricao}
+            key={item.titulo}
+            imagem={item.imagem}
+            titulo={item.titulo}
+            descricao={item.descricao}
           />
         ))}
       </div>
