@@ -46,7 +46,7 @@ img {
   max-width: 1120px;
   margin: 0 auto;
   padding: 16px 24px;
-  display: flex;
+  display: flex; flex-direction: row;
   justify-content: space-between;
   align-items: center;
   gap: 16px;
@@ -222,14 +222,21 @@ img {
 
 @media (max-width: 640px) {
   .header-container {
-    flex-direction: column;
-    align-items: flex-start;
+    padding: 14px 16px;
+    gap: 12px;
   }
+
+  .nav {
+    gap: 14px;
+  }
+
+  .nav a {
+    font-size: 0.88rem;
+  }
+}
 
   .textos-imagens,
   .cards-grid {
     grid-template-columns: 1fr;
   }
-}
-
 }
